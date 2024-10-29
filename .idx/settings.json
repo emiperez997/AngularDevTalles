@@ -1,87 +1,87 @@
 {
-  "http.proxySupport": "off",
-  "terminal.integrated.localEchoLatencyThreshold": -1,
-  "terminal.integrated.localEchoEnabled": "off",
-  "workbench.startupEditor": "none",
-  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, Courier New, monospace",
-  "editor.fontWeight": "normal",
-  "editor.fontSize": 12,
-  "editor.lineHeight": 1.5,
-  "editor.letterSpacing": 0,
-  "debug.console.fontSize": 12,
-  "window.commandCenter": false,
-  "workbench.preferredLightColorTheme": "Monospace Light",
-  "window.autoDetectColorScheme": true,
-  "workbench.layoutControl.enabled": false,
-  "inlineChat.mode": "preview",
+  "http.proxysupport": "off",
+  "terminal.integrated.localecholatencythreshold": -1,
+  "terminal.integrated.localechoenabled": "off",
+  "workbench.startupeditor": "none",
+  "editor.fontfamily": "jetbrains mono, menlo, monaco, courier new, monospace",
+  "editor.fontweight": "normal",
+  "editor.fontsize": 12,
+  "editor.lineheight": 1.5,
+  "editor.letterspacing": 0,
+  "debug.console.fontsize": 12,
+  "window.commandcenter": false,
+  "workbench.preferredlightcolortheme": "monospace light",
+  "window.autodetectcolorscheme": true,
+  "workbench.layoutcontrol.enabled": false,
+  "inlinechat.mode": "preview",
 
-  // Editor
-  "editor.cursorBlinking": "expand",
-  "editor.formatOnSave": true,
-  "editor.glyphMargin": false,
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.inlineSuggest.enabled": true,
-  "editor.lineNumbers": "relative",
+  // editor
+  "editor.cursorblinking": "expand",
+  "editor.formatonsave": true,
+  "editor.glyphmargin": false,
+  "editor.hidecursorinoverviewruler": true,
+  "editor.inlinesuggest.enabled": true,
+  "editor.linenumbers": "relative",
   "editor.minimap.enabled": false,
-  "editor.overviewRulerBorder": false,
+  "editor.overviewrulerborder": false,
   "editor.scrollbar.vertical": "auto",
-  "editor.suggest.insertMode": "replace",
-  "editor.linkedEditing": true,
+  "editor.suggest.insertmode": "replace",
+  "editor.linkedediting": true,
   "breadcrumbs.enabled": false,
-  "editor.tabSize": 2,
+  "editor.tabsize": 2,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultformatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultformatter": "esbenp.prettier-vscode"
   },
 
-  "vim.useSystemClipboard": true,
+  "vim.usesystemclipboard": true,
   "vim.highlightedyank.enable": true,
   "vim.hlsearch": true,
   "vim.autoindent": true,
-  "vim.handleKeys": {
-    "<C-d>": false,
-    "<C-n>": false,
-    "<C-s>": false,
-    "<C-z>": false
+  "vim.handlekeys": {
+    "<c-d>": false,
+    "<c-n>": false,
+    "<c-s>": false,
+    "<c-z>": false
   },
-  "vim.insertModeKeyBindings": [
+  "vim.insertmodekeybindings": [
     {
-      "after": ["<Esc>"],
+      "after": ["<esc>"],
       "before": ["k", "j"]
     }
   ],
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    // Navigation
-    { "before": ["<S-h>"], "commands": [":bprevious"] },
-    { "before": ["<S-l>"], "commands": [":bnext"] },
+  "vim.normalmodekeybindingsnonrecursive": [
+    // navigation
+    { "before": ["<s-h>"], "commands": [":bprevious"] },
+    { "before": ["<s-l>"], "commands": [":bnext"] },
 
-    // Splits
+    // splits
     { "before": ["<leader>", "v"], "commands": [":vsplit"] },
     { "before": ["<leader>", "s"], "commands": [":split"] },
 
-    // Panes
-    { "before": ["<C-h>"], "commands": ["workbench.action.focusLeftGroup"] },
-    { "before": ["<C-j>"], "commands": ["workbench.action.focusBelowGroup"] },
-    { "before": ["<C-k>"], "commands": ["workbench.action.focusAboveGroup"] },
-    { "before": ["<C-l>"], "commands": ["workbench.action.focusRightGroup"] },
+    // panes
+    { "before": ["<c-h>"], "commands": ["workbench.action.focusleftgroup"] },
+    { "before": ["<c-j>"], "commands": ["workbench.action.focusbelowgroup"] },
+    { "before": ["<c-k>"], "commands": ["workbench.action.focusabovegroup"] },
+    { "before": ["<c-l>"], "commands": ["workbench.action.focusrightgroup"] },
 
-    //   // Nice to have
+    //   // nice to have
     { "before": ["<leader>", "w"], "commands": [":w!"] },
     { "before": ["<leader>", "q"], "commands": [":q!"] },
     { "before": ["<leader>", "x"], "commands": [":x"] },
-    { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] }
+    { "before": ["<leader>", "f"], "commands": ["workbench.action.quickopen"] }
   ],
-  "vim.visualModeKeyBindings": [
-    { "before": ["<leader>", "c"], "commands": ["editor.action.commentLine"] }
+  "vim.visualmodekeybindings": [
+    { "before": ["<leader>", "c"], "commands": ["editor.action.commentline"] }
   ],
-  "vim.statusBarColors.visualline": "#005f5f",
+  "vim.statusbarcolors.visualline": "#005f5f",
 
-  "editor.fontLigatures": true,
-  "explorer.compactFolders": false,
+  "editor.fontligatures": true,
+  "explorer.compactfolders": false,
 
-  "workbench.preferredDarkColorTheme": "Ayu Mirage",
-  "workbench.iconTheme": "bearded-icons"
+  "workbench.preferreddarkcolortheme": "ayu mirage",
+  "workbench.icontheme": "bearded-icons"
 }

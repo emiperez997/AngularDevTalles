@@ -12,10 +12,8 @@
 - Aprender a usar Angular
 - Backend con Nest
 
-# Extra Tips
+# Secciones
 
-## Herramientas
-
-- IDX (Cuando no estoy en casa)
-- WSL / Neovim / Zellij / LazyVim
-- Docker
+- [ x ] Sección 1: Introducción
+- [ x ] Sección 2: Conceptos generales antes de empezar
+- [ ] Sección 3: Bases de TypeScript (Recomendado)
