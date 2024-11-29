@@ -16,4 +16,5 @@
 
 - [ x ] Sección 1: Introducción
 - [ x ] Sección 2: Conceptos generales antes de empezar
-- [ ] Sección 3: Bases de TypeScript (Recomendado)
+- [ x ] Sección 3: Bases de TypeScript (Recomendado)
+- [ ] Sección 4: Angular

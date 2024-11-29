@@ -420,3 +420,85 @@ export class Hero {
 const tony = new Person("Tony", "Stark", "New York");
 const ironman = new Hero("Ironman", 45, "Tony", tony);
 ```
+
+## Genéricos
+
+- Nos permiten definir un tipo de dato que se va a definir en el futuro
+- La ventaja de usar genéricos es que podemos tener ayuda del editor de código
+- El sentido común sería usar el tipo de dato `any`, pero esto es contraproducente a futuro
+
+```ts
+export function whatsMyType(argument: any): any {
+  return argument;
+}
+
+// No sabemos de qué tipo es la variable y no sabemos qué se puede hacer
+const amIString = whatsMyType("Hello");
+```
+
+## Decoradores
+
+- [Documentación](https://www.typescriptlang.org/docs/handbook/decorators.html)
+
+- Un decorador no es más que una función que se puede `adjuntar` a una clase, método, propiedad o parámetro
+- Es necesario agregar la siguiente configuración en `tsconfig.json` (Esto no es necesario en Angular)
+
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true
+  }
+}
+```
+
+- Nos permite tener la clase como nosotros la configuramos, pero con un `extra` que le agregamos
+
+```ts
+function classDecorator(constructor: any) {
+  return class extends constructor {
+    newProperty = "new property";
+    hello = "override";
+  };
+}
+
+@classDecorator
+export class SuperClass {
+  public myProperty: string = "ABC123";
+
+  print() {
+    console.log("Hello World");
+  }
+}
+
+console.log(SuperClass);
+
+const myClass = new SuperClass();
+
+console.log(myClass);
+```
+
+## Encadenamiento opcional
+
+- El optional chaining es indiciar con el signo de interrogación "?" que el valor puede ser undefined o null
+- Con el operador "||" le indicamos que si el valor es undefined o null, se le asignará el valor 0
+
+```ts
+const printChildern = (passenger: Passenger) => {
+  const howManyChildren = passenger.children?.length || 0;
+
+  console.log(passenger.name, howManyChildren);
+};
+```
+
+- Con el "!" le indicamos a TypeScript que estamos seguros que el valor no es null o undefined
+- `!` -> Non-null assertion operator
+
+```ts
+const returnChildrenNumber = (passenger: Passenger): number => {
+  if (!passenger.children) return 0;
+
+  const howManyChildren = passenger.children!.length;
+
+  return howManyChildren;
+};
+```
