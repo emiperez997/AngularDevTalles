@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: string = 'Mi Primera App en Angular';
-  public counter: number = 10;
 }
