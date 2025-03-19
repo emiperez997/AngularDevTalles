@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
       {{ counter }}
     </h3>
 
-    <button (click)="increaseBy(+1)">+1</button>
-    <button (click)="reset()">Reset</button>
-    <button (click)="increaseBy(-1)">-1</button>
+    <button class="btn btn-primary mx-2" (click)="increaseBy(+1)">+1</button>
+    <button class="btn btn-danger mx-2" (click)="reset()">Reset</button>
+    <button class="btn btn-primary mx-2" (click)="increaseBy(-1)">-1</button>
   `,
   standalone: false,
 })
