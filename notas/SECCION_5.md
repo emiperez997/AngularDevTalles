@@ -91,4 +91,121 @@ Dentro del `main-page.component.html` agregamos lo siguiente:
 Componentes:
 
 - `character-list`
-- `form-add-character`
+- `add-character`
+
+- La tarea va a ser crear estos componentes y agregarlos al `main-page`.
+
+## @Input() - Recibir del padre
+
+- `@Input`: Decorador que nos permite recibir información desde el componente padre. Este decorador se va a declarar en la propiedad que queremos recibir.
+
+- Declaramos un array en el component `main-page`:
+
+```typescript
+public characters: Character[] = [
+  { name: 'Krillin', power: 500 },
+  { name: 'Goku', power: 10000 },
+];
+```
+
+- En el componente `character-list` vamos a recibir la información de `characters`.
+
+```typescript
+@Input()
+public characters: Character[] = [];
+
+// o
+@Input('data') characters: Character[] = [];
+```
+
+- Puedo pasarle el nombre de la propiedad que quiero recibir o no pasarle nada. Si no le paso nada, el nombre de la propiedad que quiero recibir es el mismo que el nombre de la propiedad en el componente padre.
+
+- Para enviar la información desde el componente padre:
+
+```html
+<dbz-list [characters]="characters"></app-list>
+```
+
+## Expandiendo el \*ngFor
+
+- Podemos obtener el indice de los elementos que estamos recorriendo en un `*ngFor`.
+
+```html
+<li *ngFor="let character of characters; let i = index" class="list-group-item">
+  {{ character.name }} - {{ character.power }}
+</li>
+```
+
+- Se pueden agregar validaciones también aplicando el indice declarado en el `*ngFor`.
+
+```html
+<span>Es el primero: {{ i === 0 }}</span>
+<span>Es el ultimo: {{ i === characterList.length - 1 }}</span>
+```
+
+- También existen otras propiedades como `first`, `last`, `even`, `odd`.
+
+```html
+<li
+  *ngFor="
+      let character of characterList;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+    "
+  class="list-group-item"
+>
+  ...
+</li>
+```
+
+## ngClass - Clases basado en condiciones
+
+- `[ngClass]`: Directiva que nos permite agregar clases a un elemento basado en condiciones.
+
+```html
+[ngClass]="{ 'ist-group-item-primary': isEven, }"
+```
+
+## FormsModule y ngModel
+
+- `FormsModule`: Módulo que nos permite trabajar con formularios en Angular.
+- `ngModel`: Directiva que nos permite enlazar un input con una propiedad de un componente.
+
+- Creamos una propiedad de tipo `Character` en el componente `add-character`.
+
+```typescript
+public character: Character = {
+  name: '',
+  power: 0,
+};
+```
+
+- Aplicamos `ngModel` en los inputs del formulario.
+- Esto nos habilita el `two-way data binding`. Que es básicamente la comunicación entre el componente y la vista.
+- Obtenemos el dato y lo podemos modificar en tiempo real.
+
+```html
+<input
+  class="form-control mb-2"
+  type="text"
+  placeholder="Name"
+  name="name"
+  [(ngModel)]="character.name"
+/>
+<input
+  class="form-control mb-2"
+  type="text"
+  placeholder="Power Level"
+  name="power"
+  [(ngModel)]="character.power"
+/>
+```
+
+- Para poder ver el objeto que estamos modificando en tiempo real, agregamos el pipe `json`.
+
+```html
+{{ character | json }}
+```
