@@ -11,6 +11,7 @@ export class AddCharacterComponent {
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
+    id: '',
     name: '',
     power: 0,
   };
@@ -24,6 +25,7 @@ export class AddCharacterComponent {
 
     // Limpiar el formulario
     this.character = {
+      id: '',
       name: '',
       power: 0,
     };

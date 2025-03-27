@@ -207,5 +207,124 @@ public character: Character = {
 - Para poder ver el objeto que estamos modificando en tiempo real, agregamos el pipe `json`.
 
 ```html
-{{ character | json }}
+<pre>
+  {{ character | json }}
+</pre>
 ```
+
+## @Output() - Emitir eventos al padre
+
+- Para enviar un formulario, usamos el evento `submit`.
+
+```html
+<form (ngSubmit)="addCharacter()">...</form>
+```
+
+- Para recibir el evento desde el padre es necesario `suscribirnos` al evento
+- Este término nace de `RxJS`, que es básicamente programación reactiva.
+- El formulario va a enviar los datos al componente padre a través de un evento
+
+- Dentro de nuestro componente `add-character`:
+
+```typescript
+export class AddCharacterComponent {
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+  // ...
+
+  emitCharacter(): void {
+    console.log(this.character);
+
+    if (this.character.name.trim().length === 0) return;
+
+    this.onNewCharacter.emit({ ...this.character });
+
+    // Limpiar el formulario
+    this.character.name = "";
+    this.character.power = 0;
+  }
+}
+```
+
+- Dentro de nuestro componente `main-page.component.html` y `main-page.component.ts`:
+
+```html
+<dbz-add-character
+  (onNewCharacter)="onNewCharacter($event)"
+></dbz-add-character>
+```
+
+```typescript
+export class MainPageComponent {
+  // ...
+
+  onNewCharacter(character: Character): void {
+    console.log("MainPageComponent.onNewCharacter", character);
+  }
+}
+```
+
+- El `$event` es el objeto que estamos emitiendo desde el componente hijo.
+
+## Formas de depurar la app
+
+- `console.log`: Sirve para imprimir en consola cualquier tipo de dato.
+- `Angular DevTools`: Extensión de Chrome que nos permite depurar nuestra aplicación Angular.
+- `debugger`: Nos permite detener la ejecución de nuestro código en un punto específico.
+- `breakpoints`: Puntos de interrupción que nos permiten detener la ejecución de nuestro código en un punto específico. Esto se puede hacer desde la pestaña `Sources` del navegador.
+
+## Añadir personaje al listado
+
+- Para añadir un personaje al listado, vamos a recibir el evento en el componente `main-page`.
+
+```typescript
+onNewCharacter(character: Character): void {
+  this.characters.push(character);
+}
+```
+
+- También podríamos agregar un botón para eliminar un personaje.
+
+## Servicios
+
+- Es importante empezar a pensar en algún lugar donde podamos almacenar la información de los datos que estamos manejando.
+- Dentro de nuestro componente, no es bueno que tengamos la lógica de manejo de datos.
+- Los servicios en Angular son del tipo `singleton`, es decir, solo se crea una instancia de este servicio y se comparte en toda la aplicación.
+- Para crear el servicio podemos usar el `CLI`, o también hacerlo manualmente.
+
+```bash
+ng g s dbz/dbz
+```
+
+- Usando los snippets de Angular se crea lo siguiente
+
+```typescript
+import { Injectable } from "@angular/core";
+
+@Injectable({ providedIn: "root" })
+export class DbzService {
+  constructor() {}
+}
+```
+
+- `provideIn`: Especifica que el servicio se va a inyectar en el `root` de la aplicación. Va a realizar un `singleton` en toda la aplicación.
+
+- Para poder usarlo en nuestro componente debo inyectarlo en el constructor.
+
+```typescript
+constructor(private dbzService: DbzService) {}
+```
+
+## Paquetes externos - UUID
+
+- Usar el indice para eliminar un elemento, no es una buena práctica.
+- Para solucionar esto vamos a instalar un paquete llamado `uuid`.
+
+```bash
+pnpm install uuid
+```
+
+## Servicio privado
+
+- Cuando inyectamos un servicio privado, no vamos a poder acceder al servicio desde el template.
+- Es necesario crear los métodos y getters para poder acceder a la información.
