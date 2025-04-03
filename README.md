@@ -18,4 +18,6 @@
 - [ x ] Sección 2: Conceptos generales antes de empezar
 - [ x ] Sección 3: Bases de TypeScript (Recomendado)
 - [ x ] Sección 4: Angular
-- [ ] Sección 5: Expandir Bases de Angular
+- [ x ] Sección 5: Expandir Bases de Angular
+- [ x ] Sección 6: Despliegues a producción
+- [ ] Sección 7: GifsApp
