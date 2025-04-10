@@ -14,11 +14,12 @@
 
 # Secciones
 
-- [ x ] Sección 1: Introducción
-- [ x ] Sección 2: Conceptos generales antes de empezar
-- [ x ] Sección 3: Bases de TypeScript (Recomendado)
-- [ x ] Sección 4: Angular
-- [ x ] Sección 5: Expandir Bases de Angular
-- [ x ] Sección 6: Despliegues a producción
-- [ x ] Sección 7: GifsApp
-- [ ] Sección 8: Image Loader
+- [ x ] [Sección 1: Introducción](./notas/SECCION_1.md)
+- [ x ] [Sección 2: Conceptos generales antes de empezar](./notas/SECCION_2.md)
+- [ x ] [Sección 3: Bases de TypeScript (Recomendado)](./notas/SECCION_3.md)
+- [ x ] [Sección 4: Angular](./notas/SECCION_4.md)
+- [ x ] [Sección 5: Expandir Bases de Angular](./notas/SECCION_5.md)
+- [ x ] [Sección 6: Despliegues a producción](./notas/SECCION_6.md)
+- [ x ] [Sección 7: GifsApp](./notas/SECCION_7.md)
+- [ x ] [Sección 8: Image Loader](./notas/SECCION_8.md)
+- [ ] [Sección 9: Country SPA](./notas/SECCION_9.md)
