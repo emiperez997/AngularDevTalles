@@ -1,0 +1,15 @@
+<div id="sidebar" class="grey darken-4">
+  <h3 class="white-text">Gifs App</h3>
+
+  <hr />
+
+  <div class="collection">
+    <button
+      (click)="searchTag(gif)"
+      class="white waves-effect btn-flat"
+      *ngFor="let gif of tagsHistory"
+    >
+      {{ gif }}
+    </button>
+  </div>
+</div>

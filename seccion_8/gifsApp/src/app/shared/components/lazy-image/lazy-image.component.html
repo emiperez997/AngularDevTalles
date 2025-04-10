@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center p-5">
+  @if (!hasLoaded) {
+  <img src="loader.svg" alt="" height="35" width="35" />
+  }
+  <img
+    [src]="url"
+    [alt]="alt"
+    (load)="onLoad()"
+    class="animate__animated animate__fadeIn"
+    [ngStyle]="{ display: hasLoaded ? 'block' : 'none',}"
+  />
+</div>

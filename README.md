@@ -20,4 +20,5 @@
 - [ x ] Sección 4: Angular
 - [ x ] Sección 5: Expandir Bases de Angular
 - [ x ] Sección 6: Despliegues a producción
-- [ ] Sección 7: GifsApp
+- [ x ] Sección 7: GifsApp
+- [ ] Sección 8: Image Loader
